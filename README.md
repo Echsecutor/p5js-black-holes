@@ -2,6 +2,9 @@
 Simple astro physics game to learn p5js. Moved here from https://editor.p5js.org/Echsecutor/sketches/xfz9W-xcl
 
 
+## Acknowledgment
+
+The nice black hole picture is derived from https://pixabay.com/photos/black-hole-space-cosmos-universe-3490482/
 
 ## License
 
