@@ -160,12 +160,12 @@ function draw() {
       textSize(50);
       fill(155, 0, 0);
         textAlign(CENTER);
-      text("YOU LOOSE!\nGAME OVER!", 10, height / 2, width -10, height - 10);
+      text("You got eaten by a black hole!\nYOU LOOSE!\nGAME OVER!\nPush any key to run an easier round.", 10, height / 2, width -10, height - 10);
     } else if (game_mode === WIN) {
       textSize(50);
       fill(255, 255, 50);
               textAlign(CENTER);
-      text("YOU WIN!", 10, height / 2, width -10, height - 10);
+      text("You becam esuper massive!\nYOU WIN!\nPush any key to run a harder round.", 10, height / 2, width -10, height - 10);
     }
   
   camera_follow();
