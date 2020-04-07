@@ -20,6 +20,7 @@ let bh_img_red;
 function reset() {
   player = new Star(bh_img);
   player.object.mass = 10;
+  player.resize();
   player.object.position.x = width / 2;
   player.object.position.y = height / 2;
   player.is_player = true
@@ -124,6 +125,21 @@ function draw_objects() {
   }
 }
 
+
+
+function keyPressed() {
+  if (game_mode != PLAYING) {
+    reset();
+  }
+}
+
+function touchStarted() {
+  if (game_mode != PLAYING) {
+    reset();
+  }
+}
+
+
 function draw() {
   background(0);
 
@@ -139,19 +155,17 @@ function draw() {
   if (game_mode === PLAYING) {
     control();
     draw_objects();
-  } else {
-    if (game_mode === LOOSE) {
+  } else if (game_mode === LOOSE) {
       textSize(50);
       fill(155, 0, 0);
-      text("GAME OVER!", width / 5, height / 2, width / 5 * 3, height - 10);
+        textAlign(CENTER);
+      text("YOU LOOSE!\nGAME OVER!", 10, height / 2, width -10, height - 10);
     } else if (game_mode === WIN) {
       textSize(50);
       fill(255, 255, 50);
-      text("YOU WIN!", width / 5, height / 2, width / 5 * 3, height - 10);
+              textAlign(CENTER);
+      text("YOU WIN!", 10, height / 2, width -10, height - 10);
     }
-    if (touches.length > 0 || keyIsPressed === true) {
-      reset();
-    }
-  }
+  
   camera_follow();
 }
