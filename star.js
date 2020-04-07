@@ -37,7 +37,7 @@ function Star(bh_img) {
       image(this.img, this.object.position.x - this.scale_img*this.object.size.x/2, this.object.position.y - this.scale_img*this.object.size.y/2, this.scale_img*this.object.size.x, this.scale_img*this.object.size.y);
       fill(255, 255, 255);
     }
-    text(Math.floor(this.object.mass), this.object.position.x - 5, this.object.position.y + 6);
+    text(Math.floor(this.object.mass), this.object.position.x - 6, this.object.position.y + 6);
   }
 
 }
