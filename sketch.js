@@ -150,6 +150,7 @@ function draw() {
   if (objects.length < want_objects) {
     objects.push(new Star(bh_img_red));
     objects[objects.length - 1].object.mass = random(player.object.mass * difficulty);
+    objects[objects.length - 1].resize();
   }
 
   if (game_mode === PLAYING) {
