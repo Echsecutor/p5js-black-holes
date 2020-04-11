@@ -17,11 +17,12 @@ var msg = 'Use the arrow keys to move!'
 let bh_img
 let bh_img_red
 
-function reset () {
-  player = new Star(bh_img)
-  player.object.mass = 10
-  player.object.position.x = width / 2
-  player.object.position.y = height / 2
+function reset() {
+  player = new Star(bh_img);
+  player.object.mass = 10;
+  player.resize();
+  player.object.position.x = width / 2;
+  player.object.position.y = height / 2;
   player.is_player = true
 
   objects = [player]
@@ -160,25 +161,25 @@ function draw () {
   )
 
   if (objects.length < want_objects) {
-    objects.push(new Star(bh_img_red))
-    objects[objects.length - 1].object.mass = random(
-      player.object.mass * difficulty
-    )
+    objects.push(new Star(bh_img_red));
+    objects[objects.length - 1].object.mass = random(player.object.mass * difficulty);
+    objects[objects.length - 1].resize();
   }
 
   if (game_mode === PLAYING) {
-    control()
-    draw_objects()
-  } else {
-    if (game_mode === LOOSE) {
-      textSize(50)
-      fill(155, 0, 0)
-      text('GAME OVER!', width / 5, height / 2, (width / 5) * 3, height - 10)
+    control();
+    draw_objects();
+  } else if (game_mode === LOOSE) {
+      textSize(50);
+      fill(155, 0, 0);
+        textAlign(CENTER);
+      text("You got eaten by a black hole!\n\nYOU LOOSE!\nGAME OVER!\nPush any key to run an easier round.", 10, height / 2, width -10, height - 10);
     } else if (game_mode === WIN) {
-      textSize(50)
-      fill(255, 255, 50)
-      text('YOU WIN!', width / 5, height / 2, (width / 5) * 3, height - 10)
+      textSize(50);
+      fill(255, 255, 50);
+              textAlign(CENTER);
+      text("You became super massive!\n\nYOU WIN!\nPush any key to run a harder round.", 10, height / 2, width -10, height - 10);
     }
-  }
-  camera_follow()
+  
+  camera_follow();
 }
