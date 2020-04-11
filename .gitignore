@@ -1,0 +1,11 @@
+flymd.*
+*~
+.~lock.*
+node_modules
+*.nav
+*.aux
+*.out
+*.snm
+*.toc
+*.log
+#*#
